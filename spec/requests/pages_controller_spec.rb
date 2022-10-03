@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "PagesControllers", type: :request do
+RSpec.describe PagesController, type: :request do
   describe "#home" do
     let(:title) {"トップページ（仮）"}
 
