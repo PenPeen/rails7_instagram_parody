@@ -4,12 +4,12 @@ RSpec.describe PagesController, type: :request do
   describe "#home" do
     let(:title) {"トップページ（仮）"}
 
-    it "記事一覧ページを表示する" do
+    it "記事一覧ページを正しく表示できること" do
       get '/pages/home'
       expect(response).to have_http_status 200
     end
 
-    it "トップページの文字列が表示される" do
+    it "タイトルが正しく表示されていること" do
       get "/pages/home"
       expect(response.body).to include("<p>#{title}</p>")
     end
