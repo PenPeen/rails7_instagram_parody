@@ -1,0 +1,9 @@
+<%
+=begin%>
+ <ul>
+    <% user.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+    <% end %>
+</ul> 
+<%
+=end%>
