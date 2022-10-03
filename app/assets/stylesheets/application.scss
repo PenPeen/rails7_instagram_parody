@@ -23,3 +23,9 @@
 // サインイン画面
 @import "common";
 @import "users/devise";
+
+// ユーザープロフィール画面
+@import "users/show";
+
+// ユーザー情報編集画面
+@import "users/edit"
