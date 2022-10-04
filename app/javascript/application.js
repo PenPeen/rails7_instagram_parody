@@ -3,4 +3,5 @@ import "@hotwired/turbo-rails";
 import "controllers";
 
 // 追記
-import "./test/test";
+import "popper";
+import "bootstrap";
