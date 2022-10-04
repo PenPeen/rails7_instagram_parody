@@ -1,0 +1,9 @@
+<ul>
+    <% @post.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+    <% end %>
+
+    <% @photos.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+    <% end %>  
+</ul> 

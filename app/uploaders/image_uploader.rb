@@ -33,6 +33,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   process resize_to_fit: [50, 50]
   # end
 
+  # 画像サイズを1080×1080にリサイズ
   version :medium do
     process resize_to_fill: [1080, 1080]
   end
