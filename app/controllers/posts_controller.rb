@@ -11,11 +11,10 @@ class PostsController < ApplicationController
         @post = Post.new(post_params)
 
         # validationエラー及び、画像が存在しているか。
-        # if @post.save && @post.photos.present?
+        # `validates_associated` で `photos` のバリデーションも実行している
         if @post.save
             redirect_to root_path, flash: {notice: '投稿が保存されました'}
         else
-            @post.valid?
             flash[:alert] = "投稿に失敗しました"
             render :new, status: :unprocessable_entity
         end
