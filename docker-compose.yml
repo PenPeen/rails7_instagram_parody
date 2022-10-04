@@ -14,7 +14,7 @@ services:
   web:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
-    # pry-railsのための設定
+    # pry-rails
     stdin_open: true
     tty: true
     volumes:
@@ -23,3 +23,11 @@ services:
       - "3000:3000"
     depends_on:
       - db
+      - webdriver_chrome
+    # RSpec SystemTest
+    environment:
+      SELENIUM_REMOTE_URL: http://webdriver_chrome:4444/wd/hub
+
+  # RSpec SystemTest 
+  webdriver_chrome:
+    image: selenium/standalone-chrome
