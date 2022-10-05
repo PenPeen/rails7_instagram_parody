@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # プロフィール
   get 'users/:id', to: 'users#show', as: 'user'
   # 記事投稿
-  resources :posts, only: [:index, :new, :create] do
+  resources :posts, only: [:index, :new, :show, :create, :destroy] do
     resources :photos, only: [:create]
   end
 

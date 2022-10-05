@@ -22,7 +22,7 @@
 }
 
 .love {
-    background-image: url("~parts5");
+    background-image: image-url("parts5");
     background-repeat: no-repeat;
     height: 36px;
     width: 36px;
@@ -31,7 +31,7 @@
 
 .comment {
     margin-left: 8px;
-    background-image: url("~parts6");
+    background-image: image-url("parts6");
     background-repeat: no-repeat;
     height: 36px;
     width: 36px;
@@ -47,4 +47,46 @@
 .post-sub-text {
     text-decoration: none;
     color: #262626;
+}
+
+.post-wrap .col-md-8 {
+    padding: 0px;
+}
+
+.card-right {
+    padding: 20px;
+}
+
+.card-right-name {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+    display: flex;
+}
+
+.card-right-comment {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+    height: 320px;
+    overflow: auto;
+}
+
+.postShow-wrap {
+    border: 1px solid #e6e6e6;
+    margin: 40px;
+}
+
+.post-user-name {
+    display: flex;
+    align-items: center;
+    line-height: 0;
+}
+
+.delete-post-icon {
+    background-image: image-url("parts9");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: 20px !important;
+    color: #262626;
+    font-size: 20px;
 }
