@@ -28,7 +28,7 @@
 /public/assets
 
 # Ignore uplodaded images
-/public/uploads/photo/image/*
+/public/uploads/
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
