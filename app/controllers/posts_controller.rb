@@ -1,6 +1,11 @@
 class PostsController < ApplicationController
     before_action :authenticate_user!
 
+    def index
+        # N+1問題の対策
+        @posts = Post.limit(10).preload(:photos).order('created_at DESC')
+    end
+
     # 記事の作成画面
     def new
         @post_photos = PostPhotosForm.new
