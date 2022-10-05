@@ -1,18 +1,16 @@
 class PostsController < ApplicationController
     before_action :authenticate_user!
 
+    # 記事の作成画面
     def new
-        @post = Post.new
-        @photos = @post.photos.build
+        @post_photos = PostPhotosForm.new
     end
 
+    # 記事作成処理
     def create
-        # エラーメッセージ表示用
-        @post = Post.new(post_params)
+        @post_photos = PostPhotosForm.new(post_photos_params)
 
-        # validationエラー及び、画像が存在しているか。
-        # `validates_associated` で `photos` のバリデーションも実行している
-        if @post.save
+        if @post_photos.save
             redirect_to root_path, flash: {notice: '投稿が保存されました'}
         else
             flash[:alert] = "投稿に失敗しました"
@@ -21,8 +19,8 @@ class PostsController < ApplicationController
     end
 
     private
-    def post_params
-        params.require(:post).permit(:caption, photos_attributes: [:image]).merge(user_id: current_user.id)
+    # PostPhotosForm ストロングパラメータ
+    def post_photos_params
+        params.require(:post_photos_form).permit(:caption, :image).merge(user_id: current_user.id)
     end
-
 end

@@ -1,14 +1,5 @@
 <ul>
-    <%# @post.errors.each do |error| %>
-    <% @post.errors.full_messages.each do |error| %>
+    <% @post_photos.errors.full_messages.each do |error| %>
       <li><%= error %></li>
     <% end %>
-
-    <%
-=begin%>
- <% @photos.errors.each do |error| %>
-      <li><%= error.full_message %></li>
-    <% end %>   
-<%
-=end%>
 </ul> 
