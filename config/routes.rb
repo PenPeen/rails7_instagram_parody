@@ -14,4 +14,7 @@ Rails.application.routes.draw do
     resources :photos, only: [:create]
   end
 
+  # いいね
+  resources :likes, only: [:create, :destroy]
+
 end

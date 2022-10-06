@@ -22,7 +22,7 @@
 }
 
 .love {
-    background-image: url("~parts5");
+    background-image: image-url("parts5");
     background-repeat: no-repeat;
     height: 36px;
     width: 36px;
@@ -31,7 +31,7 @@
 
 .comment {
     margin-left: 8px;
-    background-image: url("~parts6");
+    background-image:  image-url("parts6");
     background-repeat: no-repeat;
     height: 36px;
     width: 36px;
@@ -47,4 +47,19 @@
 .post-sub-text {
     text-decoration: none;
     color: #262626;
+}
+
+.loved {
+    background-image: image-url("parts7");
+    background-repeat: no-repeat;
+    height: 36px;
+    width: 36px;
+    background-size: 36px !important;
+}
+
+.hide-text {
+    display: block;
+    overflow: hidden;
+    text-indent: 110%;
+    white-space: nowrap;
 }
