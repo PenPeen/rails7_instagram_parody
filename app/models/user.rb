@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   # アソシエーション
   has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   # devise パスワード情報を入力しなくても、情報を更新できるよう設定変更
   def update_without_current_password(params, *options)
