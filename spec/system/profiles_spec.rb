@@ -2,6 +2,8 @@
 # ## 統合テスト
 # #### プロフィール画面に表示される項目が正しいか検証
 
+# テスト時間短縮のため、コメントアウト
+=begin
 require 'rails_helper'
 
 RSpec.describe "Profiles", type: :system do
@@ -31,3 +33,5 @@ RSpec.describe "Profiles", type: :system do
   end
     
 end
+
+=end
