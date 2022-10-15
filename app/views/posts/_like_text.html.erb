@@ -6,7 +6,7 @@
       </strong>and<strong>
       <%= + like.user.name %></strong> が「いいね！」しました
     <% elsif index > 1 %>
-      </strong><%= "and " + (likes.size-index).to_s + " 他 " %> が「いいね！」しました
+      </strong><%= "& " + (likes.size-index).to_s + " 名 " %> が「いいね！」しました
       <% break %>
     <% elsif index == likes.size-2 || index == 1 %>
       <%= like.user.name %>
