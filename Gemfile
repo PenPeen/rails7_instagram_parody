@@ -58,7 +58,7 @@ gem 'bootstrap', '~> 5.2.0'
 gem 'devise'
 
 # ファイルのアップロード機能の実装
-gem 'carrierwave', '~> 2.0'
+# gem 'carrierwave', '~> 2.0'
 gem "mini_magick"
 
 group :development, :test do
