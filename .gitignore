@@ -32,3 +32,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Mailer設定が記載されているため
+/config/environments/development.rb

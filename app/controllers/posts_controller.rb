@@ -17,6 +17,9 @@ class PostsController < ApplicationController
 
         if @post_photos.save
             redirect_to root_path, flash: {notice: '投稿が保存されました'}
+
+            # 完了メールの送信
+            PostMailer.send_when_posts(current_user).deliver
         else
             flash[:alert] = "投稿に失敗しました"
             render :new, status: :unprocessable_entity
