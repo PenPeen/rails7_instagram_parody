@@ -9,7 +9,7 @@ class LikesController < ApplicationController
     end
 
     def destroy
-        @like = Like.find_by(id: params[:id])
+        @like = Like.find_by(user_id: current_user.id, post_id: params[:id])
         @post = @like.post
         @like.destroy
         redirect_to root_path

@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
     def index
         # N+1問題の対策
-        @posts = Post.limit(10).preload(:photos).order('created_at DESC')
+        @posts = Post.limit(10).preload([:photos, :user, likes: :user]).order('created_at DESC')
     end
 
     # 記事の作成画面
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
             redirect_to root_path, flash: {notice: '投稿が保存されました'}
 
             # 完了メールの送信
-            PostMailer.send_when_posts(current_user).deliver
+            # PostMailer.send_when_posts(current_user).deliver
         else
             flash[:alert] = "投稿に失敗しました"
             render :new, status: :unprocessable_entity

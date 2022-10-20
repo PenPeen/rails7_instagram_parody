@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+    
     belongs_to :user
 
     has_many :photos, dependent: :destroy
@@ -6,9 +7,13 @@ class Post < ApplicationRecord
 
     validates :caption, presence: true
 
+    # user_idとpost_idが一致するlikeを検索する
     def liked_by(user)
-        # user_idとpost_idが一致するlikeを検索する
         Like.find_by(user_id: user.id, post_id: id)
+    end
+
+    def already_liked?(like, user)
+        like.pluck(:user_id).include?(user.id)
     end
     
     # 子レコードPhotoの保存及び、バリデーション有効
