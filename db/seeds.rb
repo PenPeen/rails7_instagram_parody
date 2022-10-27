@@ -35,35 +35,32 @@ User.find(4).posts.create!([
 
 # 写真
 puts "seed Photo"
-image_first = Post.find(1).photos.create!
-image_first.image.attach(io: File.open(Rails.root.join("app/assets/images/demo-1.jpg")),filename: 'demo-1.jpg')
-image_first = Post.find(2).photos.create!
-image_first.image.attach(io: File.open(Rails.root.join("app/assets/images/demo-2.jpg")),filename: 'demo-2.jpg')
-image_first = Post.find(3).photos.create!
-image_first.image.attach(io: File.open(Rails.root.join("app/assets/images/demo-3.jpg")),filename: 'demo-3.jpg')
-image_first = Post.find(4).photos.create!
-image_first.image.attach(io: File.open(Rails.root.join("app/assets/images/demo-4.jpg")),filename: 'demo-4.jpg')
-# Post.find(2).photos.image.attach(io: File.open("#{Rails.root}/app/assets/images/demo-1.jpg"),filename: 'demo-1.jpg')
-# Post.find(3).photos.image.attach(io: File.open("#{Rails.root}/app/assets/images/demo-1.jpg"),filename: 'demo-1.jpg')
-# Post.find(4).photos.image.attach(io: File.open("#{Rails.root}/app/assets/images/demo-1.jpg"),filename: 'dem1o-1.jpg')
 
+# ActiveStorage
+# image_first = Post.find(1).photos.create!
+# image_first.image.attach(io: File.open(Rails.root.join("app/assets/images/demo-1.jpg")),filename: 'demo-1.jpg')
+# image_first = Post.find(2).photos.create!
+# image_first.image.attach(io: File.open(Rails.root.join("app/assets/images/demo-2.jpg")),filename: 'demo-2.jpg')
+# image_first = Post.find(3).photos.create!
+# image_first.image.attach(io: File.open(Rails.root.join("app/assets/images/demo-3.jpg")),filename: 'demo-3.jpg')
+# image_first = Post.find(4).photos.create!
+# image_first.image.attach(io: File.open(Rails.root.join("app/assets/images/demo-4.jpg")),filename: 'demo-4.jpg')
 
 # 
 # CarrierWave
 # 
-# Post.find(1).photos.create!(
-#     image: File.open("#{Rails.root}/app/assets/images/demo-1.jpg")
-# )
-# Post.find(2).photos.create!(
-#     image: File.open("#{Rails.root}/app/assets/images/demo-2.jpg")
-# )
-# Post.find(3).photos.create!(
-#     image: File.open("#{Rails.root}/app/assets/images/demo-3.jpg")
-# )
-# Post.find(4).photos.create!(
-#     image: File.open("#{Rails.root}/app/assets/images/demo-4.jpg")
-# )
-
+Post.find(1).photos.create!(
+    image: File.open("#{Rails.root}/app/assets/images/demo-1.jpg")
+)
+Post.find(2).photos.create!(
+    image: File.open("#{Rails.root}/app/assets/images/demo-2.jpg")
+)
+Post.find(3).photos.create!(
+    image: File.open("#{Rails.root}/app/assets/images/demo-3.jpg")
+)
+Post.find(4).photos.create!(
+    image: File.open("#{Rails.root}/app/assets/images/demo-4.jpg")
+)
 
 # いいね
 puts "seed Like"
