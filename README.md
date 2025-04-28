@@ -1,8 +1,4 @@
-
-
-# Instagram クローンアプリケーション
-
-<img width="860" alt="image" src="https://github.com/user-attachments/assets/107bf741-8eb9-446e-8a2f-ab84c9d6aa3d" />
+# Instagram 
 
 <img width="417" alt="image" src="https://github.com/user-attachments/assets/da47eca2-3c0b-4e3e-bb92-fb1f417de478" />
 
