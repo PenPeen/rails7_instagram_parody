@@ -1,7 +1,7 @@
-version: '3'
 services:
   db:
-    image: mysql:5.7
+    platform: linux/arm64/v8
+    image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: password
       TZ: "Asia/Tokyo"
@@ -12,6 +12,7 @@ services:
       - ./tmp/db:/var/lib/mysql
 
   web:
+    platform: linux/arm64/v8
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     # pry-rails
@@ -28,6 +29,6 @@ services:
     environment:
       SELENIUM_REMOTE_URL: http://webdriver_chrome:4444/wd/hub
 
-  # RSpec SystemTest 
+  # RSpec SystemTest
   webdriver_chrome:
-    image: selenium/standalone-chrome
+    image: seleniarm/standalone-chromium  # Apple Silicon (ARM64)対応のSeleniumイメージ
